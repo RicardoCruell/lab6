@@ -5,6 +5,7 @@ $(document).ready(function() {
 	initializePage();
 })
 
+
 /*
  * Function that is called when the document is ready.
  */
@@ -27,6 +28,14 @@ function addProjectDetails(e) {
 	var idNumber = projectID.substr('project'.length);
 
 	console.log("User clicked on project " + idNumber);
+
+	var tat = "/project/" + idNumber;
+
+	$.get(tat, addProject);
+}
+
+function addProject(result) {
+    console.log(result);
 }
 
 /*
